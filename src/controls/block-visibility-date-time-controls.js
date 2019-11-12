@@ -1,4 +1,5 @@
-import { DateTimePicker, TabPanel } from '@wordpress/components';
+import { DateTimePicker, HorizontalRule } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export const BlockVisibilityDateTimeControls = ( data ) => {
 
@@ -10,10 +11,6 @@ export const BlockVisibilityDateTimeControls = ( data ) => {
 
     let thisStartDate = persistedData.start;
     let thisEndDate = persistedData.end;
-
-    const onSelect = ( tabName ) => {
-        console.log( 'Selecting tab', tabName );
-    };
 
     const ScheduleStartDateTime = () => (
         <DateTimePicker
@@ -50,56 +47,23 @@ export const BlockVisibilityDateTimeControls = ( data ) => {
                     },
                 } );
 
-                // Ensure the 'end' tab is still active as the DateTime picker seems to refresh parent components
-                // This doesn't work.
-                // let endTab = document.getElementsByClassName('tab-schedule-end')[0];
-                // endTab.click();
-
             } }
             is12Hour={ is12HourTime }
         />
     );
 
-    const BlockVisibilityScheduleTabs = () => (
-        <TabPanel className="block-visibility-schedule-tabs"
-            activeClass="active-tab"
-            onSelect={ onSelect }
-            tabs={ [
-                {
-                    name: 'scheduleStart',
-                    title: 'Start',
-                    className: 'tab-schedule-start',
-                },
-                {
-                    name: 'scheduleEnd',
-                    title: 'Stop',
-                    className: 'tab-schedule-end',
-                },
-            ] }>
-            {
-                ( tab ) => {
-
-                    switch  ( tab.name ) {
-                        case 'scheduleStart':
-                            return (
-                                <ScheduleStartDateTime />
-                            );
-                        break;
-
-                        case 'scheduleEnd':
-                            return (
-                                <ScheduleEndDateTime />
-                            );
-                        break;
-                    }
-
-                }
-            }
-        </TabPanel>
+    const BlockVisibilityScheduleControls = () => (
+        <div className="block-visibility-schedule-controls">
+            <h2>{ __( 'Start Date and Time', 'block-visibility-date-and-time' ) }</h2>
+            <ScheduleStartDateTime />
+            <HorizontalRule />
+            <h2>{ __( 'End Date and Time', 'block-visibility-date-and-time' ) }</h2>
+            <ScheduleEndDateTime />
+        </div>
     );
 
 	return (
-        <BlockVisibilityScheduleTabs />
+        <BlockVisibilityScheduleControls />
 	);
 
 };

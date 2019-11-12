@@ -113,12 +113,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
 
 
 var BlockVisibilityDateTimeControls = function BlockVisibilityDateTimeControls(data) {
@@ -129,10 +132,6 @@ var BlockVisibilityDateTimeControls = function BlockVisibilityDateTimeControls(d
   var persistedData = props.attributes.blockVisibilityRules.dateTime;
   var thisStartDate = persistedData.start;
   var thisEndDate = persistedData.end;
-
-  var onSelect = function onSelect(tabName) {
-    console.log('Selecting tab', tabName);
-  };
 
   var ScheduleStartDateTime = function ScheduleStartDateTime() {
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["DateTimePicker"], {
@@ -160,43 +159,19 @@ var BlockVisibilityDateTimeControls = function BlockVisibilityDateTimeControls(d
               'end': date
             })
           })
-        }); // Ensure the 'end' tab is still active as the DateTime picker seems to refresh parent components
-        // This doesn't work.
-        // let endTab = document.getElementsByClassName('tab-schedule-end')[0];
-        // endTab.click();
+        });
       },
       is12Hour: is12HourTime
     });
   };
 
-  var BlockVisibilityScheduleTabs = function BlockVisibilityScheduleTabs() {
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["TabPanel"], {
-      className: "block-visibility-schedule-tabs",
-      activeClass: "active-tab",
-      onSelect: onSelect,
-      tabs: [{
-        name: 'scheduleStart',
-        title: 'Start',
-        className: 'tab-schedule-start'
-      }, {
-        name: 'scheduleEnd',
-        title: 'Stop',
-        className: 'tab-schedule-end'
-      }]
-    }, function (tab) {
-      switch (tab.name) {
-        case 'scheduleStart':
-          return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(ScheduleStartDateTime, null);
-          break;
-
-        case 'scheduleEnd':
-          return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(ScheduleEndDateTime, null);
-          break;
-      }
-    });
+  var BlockVisibilityScheduleControls = function BlockVisibilityScheduleControls() {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "block-visibility-schedule-controls"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("h2", null, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('Start Date and Time', 'block-visibility-date-and-time')), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(ScheduleStartDateTime, null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["HorizontalRule"], null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("h2", null, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('End Date and Time', 'block-visibility-date-and-time')), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(ScheduleEndDateTime, null));
   };
 
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(BlockVisibilityScheduleTabs, null);
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(BlockVisibilityScheduleControls, null);
 };
 
 /***/ }),

@@ -43,6 +43,7 @@
 
 .block-visibility-controls-container .block-visibility-date-time-controls .DayPicker_transitionContainer {
     width: 213px !important;
+    max-height: 245px !important;
 }
 
 .block-visibility-controls-container .block-visibility-date-time-controls .DayPicker_weekHeaders__horizontal {
@@ -70,6 +71,5 @@
 }
 
 .block-visibility-controls-container .block-visibility-date-time-controls .components-datetime .components-datetime__date-help-button {
-    margin-right: -6px;
-    margin-top: 0;
+    display: none;
 }
