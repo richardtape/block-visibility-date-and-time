@@ -7,19 +7,17 @@ import BlockVisibilityDateTimePanelBodyControl from './block-visibility-date-tim
 
 export function BlockVisibilityDateTimeControl( data ) {
 
-    let { props } = { ...data };
-
-    let rulesEnabled    = props.attributes.blockVisibilityRules.blockVisibilityRulesEnabled;
-    let blockVisibility = props.attributes.hasOwnProperty( 'blockVisibility' );
+    let rulesEnabled    = data.attributes.blockVisibilityRules.blockVisibilityRulesEnabled;
+    let blockVisibility = data.attributes.hasOwnProperty( 'blockVisibility' );
 
     if ( ! rulesEnabled || ! blockVisibility ) {
         return (
-            <Disabled><BlockVisibilityDateTimePanelBodyControl props={ props } /></Disabled>
+            <Disabled><BlockVisibilityDateTimePanelBodyControl setAttributes={ data.setAttributes } attributes={ data.attributes } /></Disabled>
         );
     }
 
     return (
-        <BlockVisibilityDateTimePanelBodyControl props={ props } />
+        <BlockVisibilityDateTimePanelBodyControl setAttributes={ data.setAttributes } attributes={ data.attributes } />
     );
 
 }
@@ -36,7 +34,7 @@ function BlockVisibilityDateTimeFill() {
             {
                 ( fillProps ) => {
                     return (
-                        <BlockVisibilityDateTimeControl props={ fillProps } />
+                        <BlockVisibilityDateTimeControl setAttributes={ fillProps.setAttributes } attributes={ fillProps.attributes } />
                     )
                 }
             }

@@ -1,12 +1,12 @@
 import { PanelBody, PanelRow } from '@wordpress/components';
-import { withInstanceId } from '@wordpress/compose';
 import { __ } from '@wordpress/i18n';
 
 import { BlockVisibilityDateTimeControls }  from './block-visibility-date-time-controls';
 
-function BlockVisibilityDateTimePanelBodyControl( { instanceId, props } ) {
 
-    const id = `bv-date-time-${ instanceId }`;
+function BlockVisibilityDateTimePanelBodyControl( { setAttributes, attributes } ) {
+
+    let rules = attributes.blockVisibilityRules;
 
     return (
         <PanelBody
@@ -15,11 +15,11 @@ function BlockVisibilityDateTimePanelBodyControl( { instanceId, props } ) {
             className="block-visibility-control-panel block-visibility-date-time-controls"
         >
             <PanelRow>
-                <BlockVisibilityDateTimeControls props={ props } />
+                <BlockVisibilityDateTimeControls rules={ rules } setAttributes={ setAttributes }  attributes={ attributes } />
             </PanelRow>
         </PanelBody>
     );
 
 }
 
-export default withInstanceId( BlockVisibilityDateTimePanelBodyControl );
+export default BlockVisibilityDateTimePanelBodyControl;
