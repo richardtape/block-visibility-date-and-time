@@ -283,39 +283,95 @@ var BlockVisibilityDateTimeControls = function BlockVisibilityDateTimeControls(_
   var BlockVisibilityScheduleControls = function BlockVisibilityScheduleControls() {
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
       className: "block-visibility-schedule-controls"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("h2", null, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__["__"])('Start Date and Time', 'block-visibility-date-and-time')), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
       className: "components-dropdown"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
       isLink: true,
+      className: "block-visibility-set-date-time",
       icon: "calendar-alt",
       onClick: function onClick() {
         return setOpenDatePopupForStart(!openDatePopupForStart);
       }
-    }, rules.dateTime.start && typeof rules.dateTime.start === 'string' ? Object(_wordpress_date__WEBPACK_IMPORTED_MODULE_4__["dateI18n"])('F j, Y g:i a', rules.dateTime.start) : Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__["__"])("Pick Start Date and Time")), openDatePopupForStart && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Popover"], {
+    }, rules.dateTime.start && typeof rules.dateTime.start === 'string' ? Object(_wordpress_date__WEBPACK_IMPORTED_MODULE_4__["dateI18n"])('D M j Y g:i a', rules.dateTime.start) : Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__["__"])("Set Start Date/Time")), openDatePopupForStart && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Popover"], {
       position: "bottom",
       onClose: setOpenDatePopupForStart.bind(null, false)
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ScheduleStartDateTime, null)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ScheduleStartDateTime, null)), rules.dateTime.start && typeof rules.dateTime.start === 'string' && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
       isLink: true,
+      label: "Clear date and time",
+      className: "block-visibility-clear-date-time",
       onClick: function onClick() {
         clearDateAndTime('start', rules);
       }
-    }, "x")), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("h2", null, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__["__"])('End Date and Time', 'block-visibility-date-and-time')), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: "20",
+      height: "20",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      "stroke-width": "1",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      class: "feather feather-x-circle"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("circle", {
+      cx: "12",
+      cy: "12",
+      r: "10"
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("line", {
+      x1: "15",
+      y1: "9",
+      x2: "9",
+      y2: "15"
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("line", {
+      x1: "9",
+      y1: "9",
+      x2: "15",
+      y2: "15"
+    })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
       className: "components-dropdown"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
       isLink: true,
+      className: "block-visibility-set-date-time",
       icon: "calendar-alt",
       onClick: function onClick() {
         return setOpenDatePopupForEnd(!openDatePopupForEnd);
       }
-    }, rules.dateTime.end && typeof rules.dateTime.end === 'string' ? Object(_wordpress_date__WEBPACK_IMPORTED_MODULE_4__["dateI18n"])('F j, Y g:i a', rules.dateTime.end) : Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__["__"])("Pick End Date and Time")), openDatePopupForEnd && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Popover"], {
+    }, rules.dateTime.end && typeof rules.dateTime.end === 'string' ? Object(_wordpress_date__WEBPACK_IMPORTED_MODULE_4__["dateI18n"])('D M j Y g:i a', rules.dateTime.end) : Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__["__"])("Set End Date/Time")), openDatePopupForEnd && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Popover"], {
       position: "bottom",
       onClose: setOpenDatePopupForEnd.bind(null, false)
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ScheduleEndDateTime, null)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ScheduleEndDateTime, null)), rules.dateTime.end && typeof rules.dateTime.end === 'string' && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
       isLink: true,
+      label: "Clear date and time",
+      className: "block-visibility-clear-date-time",
       onClick: function onClick() {
         clearDateAndTime('end', rules);
       }
-    }, "x")));
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: "20",
+      height: "20",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      "stroke-width": "1",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      class: "feather feather-x-circle"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("circle", {
+      cx: "12",
+      cy: "12",
+      r: "10"
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("line", {
+      x1: "15",
+      y1: "9",
+      x2: "9",
+      y2: "15"
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("line", {
+      x1: "9",
+      y1: "9",
+      x2: "15",
+      y2: "15"
+    })))));
   };
 
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(BlockVisibilityScheduleControls, null);
