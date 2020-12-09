@@ -31,6 +31,8 @@ function enqueue_editor_assets() { // phpcs:ignore
 		'page',
 	);
 
+	$screens = apply_filters( 'block_visibility_enqueue_editor_assets_screens', $screens );
+
 	if ( ! in_array( get_current_screen()->id, array_values( $screens ), true ) ) {
 		return;
 	}
@@ -77,7 +79,7 @@ function add_rule_type_callback( $default_rule_types_and_callbacks ) {
 }//end add_rule_type_callback()
 
 /**
- * Undocumented function
+ * Rule logic for the Date and Time component.
  *
  * @param array  $rule_value Which roles are selected for this block.
  * @param string $block_visibility Whether the block should be shown or hidden if the rule is true.
