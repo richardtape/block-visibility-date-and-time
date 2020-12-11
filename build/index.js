@@ -237,6 +237,13 @@ var BlockVisibilityDateTimeControls = function BlockVisibilityDateTimeControls(_
       _useState4 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default()(_useState3, 2),
       openDatePopupForEnd = _useState4[0],
       setOpenDatePopupForEnd = _useState4[1];
+  /**
+   * Clear the date and time - resets to not having a value.
+   *
+   * @param {*} startOrEnd Are we resetting the start or end date.
+   * @param {*} rules The current ruleset for this block.
+   */
+
 
   var clearDateAndTime = function clearDateAndTime(startOrEnd, rules) {
     setAttributes({
@@ -245,6 +252,10 @@ var BlockVisibilityDateTimeControls = function BlockVisibilityDateTimeControls(_
       })
     });
   };
+  /**
+   * DateTimePicker for the Start date/time.
+   */
+
 
   var ScheduleStartDateTime = function ScheduleStartDateTime() {
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["DateTimePicker"], {
@@ -259,9 +270,13 @@ var BlockVisibilityDateTimeControls = function BlockVisibilityDateTimeControls(_
         });
         setOpenDatePopupForStart(false);
       },
-      is12Hour: true
+      is12Hour: false
     });
   };
+  /**
+   * DateTimePicker for the End date/time.
+   */
+
 
   var ScheduleEndDateTime = function ScheduleEndDateTime() {
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["DateTimePicker"], {
@@ -276,9 +291,46 @@ var BlockVisibilityDateTimeControls = function BlockVisibilityDateTimeControls(_
         });
         setOpenDatePopupForEnd(false);
       },
-      is12Hour: true
+      is12Hour: false
     });
   };
+
+  var ClearCurrentDateTimeIcon = function ClearCurrentDateTimeIcon() {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Icon"], {
+      icon: function icon() {
+        return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("svg", {
+          xmlns: "http://www.w3.org/2000/svg",
+          width: "20",
+          height: "20",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          stroke: "currentColor",
+          "stroke-width": "1",
+          "stroke-linecap": "round",
+          "stroke-linejoin": "round",
+          class: "feather feather-x-circle"
+        }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("circle", {
+          cx: "12",
+          cy: "12",
+          r: "10"
+        }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("line", {
+          x1: "15",
+          y1: "9",
+          x2: "9",
+          y2: "15"
+        }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("line", {
+          x1: "9",
+          y1: "9",
+          x2: "15",
+          y2: "15"
+        }));
+      }
+    });
+  };
+  /**
+   * Output the Scheduling controls
+   */
+
 
   var BlockVisibilityScheduleControls = function BlockVisibilityScheduleControls() {
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
@@ -292,8 +344,9 @@ var BlockVisibilityDateTimeControls = function BlockVisibilityDateTimeControls(_
       onClick: function onClick() {
         return setOpenDatePopupForStart(!openDatePopupForStart);
       }
-    }, rules.dateTime.start && typeof rules.dateTime.start === 'string' ? Object(_wordpress_date__WEBPACK_IMPORTED_MODULE_4__["dateI18n"])('D M j Y g:i a', rules.dateTime.start) : Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__["__"])("Set Start Date/Time")), openDatePopupForStart && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Popover"], {
-      position: "bottom",
+    }, rules.dateTime.start && typeof rules.dateTime.start === 'string' ? Object(_wordpress_date__WEBPACK_IMPORTED_MODULE_4__["dateI18n"])('D M j Y, G:i', rules.dateTime.start) : Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__["__"])("Set Start Date/Time")), openDatePopupForStart && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Popover"], {
+      position: "middle left",
+      className: "block-visibility-picker-popover block-visibility-picker-popover-start",
       onClose: setOpenDatePopupForStart.bind(null, false)
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ScheduleStartDateTime, null)), rules.dateTime.start && typeof rules.dateTime.start === 'string' && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
       isLink: true,
@@ -302,32 +355,7 @@ var BlockVisibilityDateTimeControls = function BlockVisibilityDateTimeControls(_
       onClick: function onClick() {
         clearDateAndTime('start', rules);
       }
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      width: "20",
-      height: "20",
-      viewBox: "0 0 24 24",
-      fill: "none",
-      stroke: "currentColor",
-      "stroke-width": "1",
-      "stroke-linecap": "round",
-      "stroke-linejoin": "round",
-      class: "feather feather-x-circle"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("circle", {
-      cx: "12",
-      cy: "12",
-      r: "10"
-    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("line", {
-      x1: "15",
-      y1: "9",
-      x2: "9",
-      y2: "15"
-    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("line", {
-      x1: "9",
-      y1: "9",
-      x2: "15",
-      y2: "15"
-    })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ClearCurrentDateTimeIcon, null))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
       className: "components-dropdown"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
       isLink: true,
@@ -336,8 +364,9 @@ var BlockVisibilityDateTimeControls = function BlockVisibilityDateTimeControls(_
       onClick: function onClick() {
         return setOpenDatePopupForEnd(!openDatePopupForEnd);
       }
-    }, rules.dateTime.end && typeof rules.dateTime.end === 'string' ? Object(_wordpress_date__WEBPACK_IMPORTED_MODULE_4__["dateI18n"])('D M j Y g:i a', rules.dateTime.end) : Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__["__"])("Set End Date/Time")), openDatePopupForEnd && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Popover"], {
-      position: "bottom",
+    }, rules.dateTime.end && typeof rules.dateTime.end === 'string' ? Object(_wordpress_date__WEBPACK_IMPORTED_MODULE_4__["dateI18n"])('D M j Y, G:i', rules.dateTime.end) : Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__["__"])("Set End Date/Time")), openDatePopupForEnd && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Popover"], {
+      position: "middle left",
+      className: "block-visibility-picker-popover block-visibility-picker-popover-end",
       onClose: setOpenDatePopupForEnd.bind(null, false)
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ScheduleEndDateTime, null)), rules.dateTime.end && typeof rules.dateTime.end === 'string' && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
       isLink: true,
@@ -346,32 +375,9 @@ var BlockVisibilityDateTimeControls = function BlockVisibilityDateTimeControls(_
       onClick: function onClick() {
         clearDateAndTime('end', rules);
       }
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      width: "20",
-      height: "20",
-      viewBox: "0 0 24 24",
-      fill: "none",
-      stroke: "currentColor",
-      "stroke-width": "1",
-      "stroke-linecap": "round",
-      "stroke-linejoin": "round",
-      class: "feather feather-x-circle"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("circle", {
-      cx: "12",
-      cy: "12",
-      r: "10"
-    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("line", {
-      x1: "15",
-      y1: "9",
-      x2: "9",
-      y2: "15"
-    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("line", {
-      x1: "9",
-      y1: "9",
-      x2: "15",
-      y2: "15"
-    })))));
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ClearCurrentDateTimeIcon, null))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("p", {
+      class: "date-time-help-intro"
+    }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__["__"])('Set start and/or end dates for when this block will be'), " ", attributes.blockVisibility, "."));
   };
 
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(BlockVisibilityScheduleControls, null);

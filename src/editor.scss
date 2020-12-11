@@ -23,3 +23,33 @@
 .block-visibility-schedule-controls .block-visibility-clear-date-time svg {
     fill: transparent;
 }
+
+/*
+    The DateTime Picker Popover needs some love
+*/
+.block-visibility-picker-popover .components-datetime__time {
+    padding: 1rem;
+    background: rgb(245,245,245);
+}
+
+.block-visibility-picker-popover .components-datetime__buttons {
+    display: none;
+}
+
+.block-visibility-picker-popover .components-datetime__date {
+    padding-left: 17px;
+}
+
+.block-visibility-picker-popover .CalendarMonth.CalendarMonth_1 {
+    padding: 0 !important;
+}
+
+/*
+    Help text for date/time controls
+*/
+.block-visibility-controls-container .date-time-help-intro {
+    margin: 1rem 0 0;
+    font-size: 12px;
+    font-style: normal;
+    color: rgb(117, 117, 117);
+}
