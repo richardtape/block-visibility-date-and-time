@@ -1,0 +1,40 @@
+/*
+    As this button is a 'link' we tweak it to not have an underline as it looks super weird with an icon
+*/
+.block-visibility-schedule-controls .block-visibility-set-date-time.is-link {
+  text-decoration: none;
+  margin-left: -10px; }
+
+/*
+    Button icon needs some room
+*/
+.block-visibility-schedule-controls .block-visibility-set-date-time span {
+  margin-right: 10px; }
+
+.block-visibility-schedule-controls .components-dropdown {
+  margin: 1rem 0 0; }
+
+/*
+    Tweak the 'clear' date and time button
+*/
+.block-visibility-schedule-controls .block-visibility-clear-date-time svg {
+  fill: transparent; }
+
+/*
+    The DateTime Picker Popover needs some love
+*/
+.block-visibility-picker-popover .components-datetime__time {
+  padding: 1rem;
+  background: whitesmoke; }
+
+.block-visibility-picker-popover .components-datetime__buttons {
+  display: none; }
+
+.block-visibility-picker-popover .components-datetime__date {
+  padding-left: 17px; }
+
+.block-visibility-picker-popover .CalendarMonth.CalendarMonth_1 {
+  padding: 0 !important; }
+
+
+/*# sourceMappingURL=index.css.map*/
