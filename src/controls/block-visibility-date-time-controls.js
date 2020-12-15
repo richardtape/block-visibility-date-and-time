@@ -128,7 +128,7 @@ export const BlockVisibilityDateTimeControls = ({ rules, setAttributes, attribut
                 ) }
             </div>
 
-            <p class="date-time-help-intro block-visibility-help-text">{ __( 'Set start and/or end dates for when this block will be ' + attributes.blockVisibility + '. Not selecting either date will mean this block is ' + attributes.blockVisibility + ' at all times.' ) }</p>
+            <p className="date-time-help-intro block-visibility-help-text">{ __( 'Set start and/or end dates for when this block will be ' + attributes.blockVisibility + '. Not selecting either date will mean this block is ' + attributes.blockVisibility + ' at all times.' ) }</p>
 
         </div>
     );

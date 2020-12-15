@@ -517,7 +517,7 @@ var BlockVisibilityDateTimeControls = function BlockVisibilityDateTimeControls(_
         clearDateAndTime('end', rules);
       }
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ClearCurrentDateTimeIcon, null))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("p", {
-      class: "date-time-help-intro block-visibility-help-text"
+      className: "date-time-help-intro block-visibility-help-text"
     }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__["__"])('Set start and/or end dates for when this block will be ' + attributes.blockVisibility + '. Not selecting either date will mean this block is ' + attributes.blockVisibility + ' at all times.')));
   };
 
