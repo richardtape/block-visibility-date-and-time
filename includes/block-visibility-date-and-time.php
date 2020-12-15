@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Main loader file for Block Visibility Date and Time Add-on.
+ * Main loader file for Content Visibility Date and Time Add-on.
  *
- * @package BlockVisibilityDateAndTime
+ * @package ContentVisibilityDateAndTime
  */
 
-namespace RichardTape\BlockVisibilityDateAndTime;
+namespace RichardTape\ContentVisibilityDateAndTime;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {

@@ -1,8 +1,8 @@
-# Block Visibility Date and Time Add-On
+# Content Visibility Date and Time Add-On
 
-WordPress has had the ability to schedule each post or page (or even stylistic changes in the customizer) for ages. Block Visibility Date and Time brings that ability to each and every block on your WordPress site.
+WordPress has had the ability to schedule each post or page (or even stylistic changes in the customizer) for ages. Content Visibility Date and Time brings that ability to each and every block on your WordPress site.
 
-An add-on for the [Block Visibility WordPress plugin](https://github.com/richardtape/block-visibility) that allows you to control when (both date and time) to start and/or stop showing a block on each of your posts or pages.
+An add-on for the [Content Visibility WordPress plugin](https://github.com/richardtape/content-visibility) that allows you to control when (both date and time) to start and/or stop showing a block on each of your posts or pages.
 
 ## Examples
 
@@ -16,9 +16,9 @@ or
 
 Start showing a block at 6am on May 23rd 2021 with no end date. (i.e. it is hidden until that date and time and public afterwards)
 
-## Block Visibility
+## Content Visibility
 
-Works alongside the core [Block Visibility plugin](https://github.com/richardtape/block-visibility) and [User Role add-on](https://github.com/richardtape/block-visibility-user-role) meaning you can schedule blocks for dates and times and only shown them to those users signed in with a specific role.
+Works alongside the core [Content Visibility plugin](https://github.com/richardtape/content-visibility) and [User Role add-on](https://github.com/richardtape/content-visibility-user-role) meaning you can schedule blocks for dates and times and only shown them to those users signed in with a specific role.
 
 ## Who made this?
 
