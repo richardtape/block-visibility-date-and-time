@@ -4,7 +4,7 @@ import { dateI18n } from '@wordpress/date';
 import { __ } from '@wordpress/i18n';
 
 
-export const BlockVisibilityDateTimeControls = ({ rules, setAttributes, attributes }) => {
+export const ContentVisibilityDateTimeControls = ({ rules, setAttributes, attributes }) => {
 
     const [ openDatePopupForStart, setOpenDatePopupForStart ] = useState( false );
     const [ openDatePopupForEnd, setOpenDatePopupForEnd ]     = useState( false );
@@ -18,7 +18,7 @@ export const BlockVisibilityDateTimeControls = ({ rules, setAttributes, attribut
     const clearDateAndTime = ( startOrEnd, rules ) => {
 
         setAttributes( {
-            blockVisibilityRules: {
+            contentVisibilityRules: {
                 ...rules,
                 dateTime: {
                     ...rules.dateTime,
@@ -38,7 +38,7 @@ export const BlockVisibilityDateTimeControls = ({ rules, setAttributes, attribut
             onChange={(date) => {
 
                 setAttributes( {
-                    blockVisibilityRules: {
+                    contentVisibilityRules: {
                         ...rules,
                         dateTime: {
                             ...rules.dateTime,
@@ -62,7 +62,7 @@ export const BlockVisibilityDateTimeControls = ({ rules, setAttributes, attribut
             currentDate={rules.dateTime.end}
             onChange={ (date) => {
                 setAttributes({
-                    blockVisibilityRules: {
+                    contentVisibilityRules: {
                         ...rules,
                         dateTime: {
                             ...rules.dateTime,
@@ -89,22 +89,22 @@ export const BlockVisibilityDateTimeControls = ({ rules, setAttributes, attribut
     /**
      * Output the Scheduling controls
      */
-    const BlockVisibilityScheduleControls = () => (
+    const ContentVisibilityScheduleControls = () => (
 
-        <div className="block-visibility-schedule-controls">
+        <div className="content-visibility-schedule-controls">
 
             <div className="components-dropdown">
-                <Button isLink={true} className="block-visibility-set-date-time" icon="calendar-alt" onClick={ () => setOpenDatePopupForStart( ! openDatePopupForStart ) }>
+                <Button isLink={true} className="content-visibility-set-date-time" icon="calendar-alt" onClick={ () => setOpenDatePopupForStart( ! openDatePopupForStart ) }>
                     { ( rules.dateTime.start && typeof rules.dateTime.start === 'string' ) ? dateI18n( 'D M j Y, G:i', rules.dateTime.start ) : __( "Set Start Date/Time" ) }
                 </Button>
                 {openDatePopupForStart && (
-                    <Popover position="middle left" className="block-visibility-picker-popover block-visibility-picker-popover-start" onClose={setOpenDatePopupForStart.bind( null, false )}>
+                    <Popover position="middle left" className="content-visibility-picker-popover content-visibility-picker-popover-start" onClose={setOpenDatePopupForStart.bind( null, false )}>
                         <ScheduleStartDateTime />
                     </Popover>
                 )}
 
                 { ( rules.dateTime.start && typeof rules.dateTime.start === 'string' ) && (
-                    <Button isLink={true} label="Clear date and time" className="block-visibility-clear-date-time" onClick={() => { clearDateAndTime('start', rules); }}>
+                    <Button isLink={true} label="Clear date and time" className="content-visibility-clear-date-time" onClick={() => { clearDateAndTime('start', rules); }}>
                         <ClearCurrentDateTimeIcon />
                     </Button>
                 ) }
@@ -112,29 +112,29 @@ export const BlockVisibilityDateTimeControls = ({ rules, setAttributes, attribut
             </div>
 
             <div className="components-dropdown">
-                <Button isLink={true} className="block-visibility-set-date-time" icon="calendar-alt" onClick={ () => setOpenDatePopupForEnd( ! openDatePopupForEnd ) }>
+                <Button isLink={true} className="content-visibility-set-date-time" icon="calendar-alt" onClick={ () => setOpenDatePopupForEnd( ! openDatePopupForEnd ) }>
                     { ( rules.dateTime.end && typeof rules.dateTime.end === 'string' ) ? dateI18n( 'D M j Y, G:i', rules.dateTime.end ) : __( "Set End Date/Time" ) }
                 </Button>
                 {openDatePopupForEnd && (
-                    <Popover position="middle left" className="block-visibility-picker-popover block-visibility-picker-popover-end" onClose={ setOpenDatePopupForEnd.bind( null, false ) }>
+                    <Popover position="middle left" className="content-visibility-picker-popover content-visibility-picker-popover-end" onClose={ setOpenDatePopupForEnd.bind( null, false ) }>
                         <ScheduleEndDateTime />
                     </Popover>
                 )}
 
                 { ( rules.dateTime.end && typeof rules.dateTime.end === 'string' ) && (
-                    <Button isLink={true} label="Clear date and time" className="block-visibility-clear-date-time" onClick={() => { clearDateAndTime('end', rules); }}>
+                    <Button isLink={true} label="Clear date and time" className="content-visibility-clear-date-time" onClick={() => { clearDateAndTime('end', rules); }}>
                         <ClearCurrentDateTimeIcon />
                     </Button>
                 ) }
             </div>
 
-            <p className="date-time-help-intro block-visibility-help-text">{ __( 'Set start and/or end dates for when this block will be ' + attributes.blockVisibility + '. Not selecting either date will mean this block is ' + attributes.blockVisibility + ' at all times.' ) }</p>
+            <p className="date-time-help-intro content-visibility-help-text">{ __( 'Set start and/or end dates for when this block will be ' + attributes.contentVisibility + '. Not selecting either date will mean this block is ' + attributes.contentVisibility + ' at all times.' ) }</p>
 
         </div>
     );
 
     return (
-        <BlockVisibilityScheduleControls />
+        <ContentVisibilityScheduleControls />
     );
 
 };

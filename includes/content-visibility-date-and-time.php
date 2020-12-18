@@ -24,7 +24,7 @@ add_action( 'content_visibility_enqueue_editor_assets', __NAMESPACE__ . '\\enque
 function enqueue_editor_assets() { // phpcs:ignore
 
 	wp_register_script(
-		'block-visibility-date-and-time',
+		'content-visibility-date-and-time',
 		plugins_url( '/build/index.js', dirname( __FILE__ ) ),
 		array(
 			'wp-blocks',
@@ -40,15 +40,15 @@ function enqueue_editor_assets() { // phpcs:ignore
 
 	$block_visibility_date_and_time_args = array();
 
-	wp_localize_script( 'block-visibility-date-and-time', 'BlockVisibilityDateAndTime', $block_visibility_date_and_time_args );
+	wp_localize_script( 'content-visibility-date-and-time', 'BlockVisibilityDateAndTime', $block_visibility_date_and_time_args );
 
-	wp_enqueue_script( 'block-visibility-date-and-time' );
+	wp_enqueue_script( 'content-visibility-date-and-time' );
 
-	wp_enqueue_style( 'block-visibility-date-and-time-panel', plugins_url( 'build/index.css', dirname( __FILE__ ) ) );
+	wp_enqueue_style( 'content-visibility-date-and-time-panel', plugins_url( 'build/index.css', dirname( __FILE__ ) ) );
 
 }//end enqueue_editor_assets()
 
-add_filter( 'block_visibility_rule_types_and_callbacks', __NAMESPACE__ . '\\add_rule_type_callback' );
+add_filter( 'content_visibility_rule_types_and_callbacks', __NAMESPACE__ . '\\add_rule_type_callback' );
 
 /**
  * Register our rule type to enable us to provide the logic callback.

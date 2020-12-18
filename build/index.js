@@ -330,16 +330,16 @@ module.exports = _unsupportedIterableToArray;
 
 /***/ }),
 
-/***/ "./src/controls/block-visibility-date-time-controls.js":
-/*!*************************************************************!*\
-  !*** ./src/controls/block-visibility-date-time-controls.js ***!
-  \*************************************************************/
-/*! exports provided: BlockVisibilityDateTimeControls */
+/***/ "./src/controls/content-visibility-date-time-controls.js":
+/*!***************************************************************!*\
+  !*** ./src/controls/content-visibility-date-time-controls.js ***!
+  \***************************************************************/
+/*! exports provided: ContentVisibilityDateTimeControls */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BlockVisibilityDateTimeControls", function() { return BlockVisibilityDateTimeControls; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContentVisibilityDateTimeControls", function() { return ContentVisibilityDateTimeControls; });
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
@@ -364,7 +364,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
-var BlockVisibilityDateTimeControls = function BlockVisibilityDateTimeControls(_ref) {
+var ContentVisibilityDateTimeControls = function ContentVisibilityDateTimeControls(_ref) {
   var rules = _ref.rules,
       setAttributes = _ref.setAttributes,
       attributes = _ref.attributes;
@@ -388,7 +388,7 @@ var BlockVisibilityDateTimeControls = function BlockVisibilityDateTimeControls(_
 
   var clearDateAndTime = function clearDateAndTime(startOrEnd, rules) {
     setAttributes({
-      blockVisibilityRules: _objectSpread(_objectSpread({}, rules), {}, {
+      contentVisibilityRules: _objectSpread(_objectSpread({}, rules), {}, {
         dateTime: _objectSpread(_objectSpread({}, rules.dateTime), {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, startOrEnd, {}))
       })
     });
@@ -403,7 +403,7 @@ var BlockVisibilityDateTimeControls = function BlockVisibilityDateTimeControls(_
       currentDate: rules.dateTime.start,
       onChange: function onChange(date) {
         setAttributes({
-          blockVisibilityRules: _objectSpread(_objectSpread({}, rules), {}, {
+          contentVisibilityRules: _objectSpread(_objectSpread({}, rules), {}, {
             dateTime: _objectSpread(_objectSpread({}, rules.dateTime), {}, {
               'start': date
             })
@@ -424,7 +424,7 @@ var BlockVisibilityDateTimeControls = function BlockVisibilityDateTimeControls(_
       currentDate: rules.dateTime.end,
       onChange: function onChange(date) {
         setAttributes({
-          blockVisibilityRules: _objectSpread(_objectSpread({}, rules), {}, {
+          contentVisibilityRules: _objectSpread(_objectSpread({}, rules), {}, {
             dateTime: _objectSpread(_objectSpread({}, rules.dateTime), {}, {
               'end': date
             })
@@ -473,26 +473,26 @@ var BlockVisibilityDateTimeControls = function BlockVisibilityDateTimeControls(_
    */
 
 
-  var BlockVisibilityScheduleControls = function BlockVisibilityScheduleControls() {
+  var ContentVisibilityScheduleControls = function ContentVisibilityScheduleControls() {
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
-      className: "block-visibility-schedule-controls"
+      className: "content-visibility-schedule-controls"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
       className: "components-dropdown"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
       isLink: true,
-      className: "block-visibility-set-date-time",
+      className: "content-visibility-set-date-time",
       icon: "calendar-alt",
       onClick: function onClick() {
         return setOpenDatePopupForStart(!openDatePopupForStart);
       }
     }, rules.dateTime.start && typeof rules.dateTime.start === 'string' ? Object(_wordpress_date__WEBPACK_IMPORTED_MODULE_4__["dateI18n"])('D M j Y, G:i', rules.dateTime.start) : Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__["__"])("Set Start Date/Time")), openDatePopupForStart && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Popover"], {
       position: "middle left",
-      className: "block-visibility-picker-popover block-visibility-picker-popover-start",
+      className: "content-visibility-picker-popover content-visibility-picker-popover-start",
       onClose: setOpenDatePopupForStart.bind(null, false)
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ScheduleStartDateTime, null)), rules.dateTime.start && typeof rules.dateTime.start === 'string' && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
       isLink: true,
       label: "Clear date and time",
-      className: "block-visibility-clear-date-time",
+      className: "content-visibility-clear-date-time",
       onClick: function onClick() {
         clearDateAndTime('start', rules);
       }
@@ -500,36 +500,36 @@ var BlockVisibilityDateTimeControls = function BlockVisibilityDateTimeControls(_
       className: "components-dropdown"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
       isLink: true,
-      className: "block-visibility-set-date-time",
+      className: "content-visibility-set-date-time",
       icon: "calendar-alt",
       onClick: function onClick() {
         return setOpenDatePopupForEnd(!openDatePopupForEnd);
       }
     }, rules.dateTime.end && typeof rules.dateTime.end === 'string' ? Object(_wordpress_date__WEBPACK_IMPORTED_MODULE_4__["dateI18n"])('D M j Y, G:i', rules.dateTime.end) : Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__["__"])("Set End Date/Time")), openDatePopupForEnd && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Popover"], {
       position: "middle left",
-      className: "block-visibility-picker-popover block-visibility-picker-popover-end",
+      className: "content-visibility-picker-popover content-visibility-picker-popover-end",
       onClose: setOpenDatePopupForEnd.bind(null, false)
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ScheduleEndDateTime, null)), rules.dateTime.end && typeof rules.dateTime.end === 'string' && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
       isLink: true,
       label: "Clear date and time",
-      className: "block-visibility-clear-date-time",
+      className: "content-visibility-clear-date-time",
       onClick: function onClick() {
         clearDateAndTime('end', rules);
       }
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ClearCurrentDateTimeIcon, null))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("p", {
-      className: "date-time-help-intro block-visibility-help-text"
-    }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__["__"])('Set start and/or end dates for when this block will be ' + attributes.blockVisibility + '. Not selecting either date will mean this block is ' + attributes.blockVisibility + ' at all times.')));
+      className: "date-time-help-intro content-visibility-help-text"
+    }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__["__"])('Set start and/or end dates for when this block will be ' + attributes.contentVisibility + '. Not selecting either date will mean this block is ' + attributes.contentVisibility + ' at all times.')));
   };
 
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(BlockVisibilityScheduleControls, null);
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(ContentVisibilityScheduleControls, null);
 };
 
 /***/ }),
 
-/***/ "./src/controls/block-visibility-date-time-panel-body.js":
-/*!***************************************************************!*\
-  !*** ./src/controls/block-visibility-date-time-panel-body.js ***!
-  \***************************************************************/
+/***/ "./src/controls/content-visibility-date-time-panel-body.js":
+/*!*****************************************************************!*\
+  !*** ./src/controls/content-visibility-date-time-panel-body.js ***!
+  \*****************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -541,41 +541,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _block_visibility_date_time_controls__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block-visibility-date-time-controls */ "./src/controls/block-visibility-date-time-controls.js");
+/* harmony import */ var _content_visibility_date_time_controls__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./content-visibility-date-time-controls */ "./src/controls/content-visibility-date-time-controls.js");
 
 
 
 
 
-function BlockVisibilityDateTimePanelBodyControl(_ref) {
+function ContentVisibilityDateTimePanelBodyControl(_ref) {
   var setAttributes = _ref.setAttributes,
       attributes = _ref.attributes;
-  var rules = attributes.blockVisibilityRules;
+  var rules = attributes.contentVisibilityRules;
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__["PanelBody"], {
-    title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Date and Time', 'block-visibility-date-time'),
+    title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Date and Time', 'content-visibility-date-time'),
     initialOpen: false,
-    className: "block-visibility-control-panel block-visibility-date-time-controls"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__["PanelRow"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_block_visibility_date_time_controls__WEBPACK_IMPORTED_MODULE_3__["BlockVisibilityDateTimeControls"], {
+    className: "content-visibility-control-panel block-visibility-date-time-controls"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__["PanelRow"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_content_visibility_date_time_controls__WEBPACK_IMPORTED_MODULE_3__["ContentVisibilityDateTimeControls"], {
     rules: rules,
     setAttributes: setAttributes,
     attributes: attributes
   })));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (BlockVisibilityDateTimePanelBodyControl);
+/* harmony default export */ __webpack_exports__["default"] = (ContentVisibilityDateTimePanelBodyControl);
 
 /***/ }),
 
-/***/ "./src/controls/block-visibility-date-time.js":
-/*!****************************************************!*\
-  !*** ./src/controls/block-visibility-date-time.js ***!
-  \****************************************************/
-/*! exports provided: BlockVisibilityDateTimeControl */
+/***/ "./src/controls/content-visibility-date-time.js":
+/*!******************************************************!*\
+  !*** ./src/controls/content-visibility-date-time.js ***!
+  \******************************************************/
+/*! exports provided: ContentVisibilityDateTimeControl */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BlockVisibilityDateTimeControl", function() { return BlockVisibilityDateTimeControl; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContentVisibilityDateTimeControl", function() { return ContentVisibilityDateTimeControl; });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
@@ -586,41 +586,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_plugins__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_plugins__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/hooks */ "@wordpress/hooks");
 /* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _block_visibility_date_time_panel_body__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./block-visibility-date-time-panel-body */ "./src/controls/block-visibility-date-time-panel-body.js");
+/* harmony import */ var _content_visibility_date_time_panel_body__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./content-visibility-date-time-panel-body */ "./src/controls/content-visibility-date-time-panel-body.js");
 
 
 
 
 
 
-function BlockVisibilityDateTimeControl(data) {
-  var rulesEnabled = data.attributes.blockVisibilityRules.blockVisibilityRulesEnabled;
-  var blockVisibility = data.attributes.hasOwnProperty('blockVisibility');
+function ContentVisibilityDateTimeControl(data) {
+  var rulesEnabled = data.attributes.contentVisibilityRules.contentVisibilityRulesEnabled;
+  var contentVisibility = data.attributes.hasOwnProperty('contentVisibility');
 
-  if (!rulesEnabled || !blockVisibility) {
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__["Disabled"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_block_visibility_date_time_panel_body__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  if (!rulesEnabled || !contentVisibility) {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__["Disabled"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_content_visibility_date_time_panel_body__WEBPACK_IMPORTED_MODULE_5__["default"], {
       setAttributes: data.setAttributes,
       attributes: data.attributes
     }));
   }
 
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_block_visibility_date_time_panel_body__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_content_visibility_date_time_panel_body__WEBPACK_IMPORTED_MODULE_5__["default"], {
     setAttributes: data.setAttributes,
     attributes: data.attributes
   });
 }
 /**
- * Render the <BlockVisibilityDateTimeControl> component by adding
+ * Render the <ContentVisibilityDateTimeControl> component by adding
  * it to the block-visibility-extra-controls Fill.
  *
- * @return {Object} A Fill component wrapping the BlockVisibilityDateTimeControl component.
+ * @return {Object} A Fill component wrapping the ContentVisibilityDateTimeControl component.
  */
 
-function BlockVisibilityDateTimeFill() {
+function ContentVisibilityDateTimeFill() {
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__["Fill"], {
-    name: "block-visibility-extra-controls"
+    name: "content-visibility-extra-controls"
   }, function (fillProps) {
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(BlockVisibilityDateTimeControl, {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(ContentVisibilityDateTimeControl, {
       setAttributes: fillProps.setAttributes,
       attributes: fillProps.attributes
     });
@@ -628,13 +628,13 @@ function BlockVisibilityDateTimeFill() {
 } // Add our component to the Slot provided by BlockVisibilityControls
 
 
-Object(_wordpress_plugins__WEBPACK_IMPORTED_MODULE_3__["registerPlugin"])('block-visibility-03-date-time-fill', {
-  render: BlockVisibilityDateTimeFill
+Object(_wordpress_plugins__WEBPACK_IMPORTED_MODULE_3__["registerPlugin"])('content-visibility-03-date-time-fill', {
+  render: ContentVisibilityDateTimeFill
 }); // Register our visibility rule with the main plugin
 
-Object(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_4__["addFilter"])('blockVisibility.defaultBlockVisibilityRules', 'block-visibility-date-time/block-visibility-rules', registerDateTimeBlockVisibilityRule);
+Object(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_4__["addFilter"])('contentVisibility.defaultContentVisibilityRules', 'content-visibility-date-time/block-visibility-rules', registerDateTimeContentVisibilityRule);
 
-function registerDateTimeBlockVisibilityRule(defaultRules) {
+function registerDateTimeContentVisibilityRule(defaultRules) {
   defaultRules.dateTime = {
     start: {},
     end: {}
@@ -668,7 +668,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _controls_block_visibility_date_time__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./controls/block-visibility-date-time */ "./src/controls/block-visibility-date-time.js");
+/* harmony import */ var _controls_content_visibility_date_time__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./controls/content-visibility-date-time */ "./src/controls/content-visibility-date-time.js");
 
 
 

@@ -25,4 +25,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-require_once plugin_dir_path( __FILE__ ) . 'includes/block-visibility-date-and-time.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/content-visibility-date-and-time.php';
