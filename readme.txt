@@ -9,7 +9,7 @@ Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-A time and date add-on for [Content Visibility](https://wordpress.org/plugins/content-visibility/).
+A date and time add-on for [Content Visibility](https://wordpress.org/plugins/content-visibility/).
 
 == Description ==
 
@@ -28,6 +28,9 @@ It's a chameleon. A cool little creature which can change the way it appears - t
 = Got a question? =
 
 Let me know: [https://github.com/richardtape/content-visibility-date-and-time/issues/new](https://github.com/richardtape/content-visibility-date-and-time/issues/new)
+
+== Screenshots ==
+1. Showing the content visibility date and time controls in the content editor sidebar
 
 == Changelog ==
 

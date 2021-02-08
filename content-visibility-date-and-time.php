@@ -1,6 +1,6 @@
 <?php
 /**
- * Content Visibility Date and Time Add-On
+ * Content Visibility Date and Time
  *
  * @package     ContentVisibilityUserRole
  * @author      Richard Tape
@@ -8,7 +8,7 @@
  * @license     GPL-2.0+
  *
  * @wordpress-plugin
- * Plugin Name: Content Visibility Date and Time Add-On
+ * Plugin Name: Content Visibility Date and Time
  * Plugin URI:  https://richardtape.com/content-visibility/
  * Description: [Content Visibility Add-On] Schedule showing or hiding specific blocks.
  * Version:     0.1.0
