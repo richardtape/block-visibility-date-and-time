@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Content Visibility Date and Time Add-On
  *
@@ -12,7 +11,7 @@
  * Plugin Name: Content Visibility Date and Time Add-On
  * Plugin URI:  https://richardtape.com
  * Description: Schedule showing or hiding specific blocks.
- * Version:     1.0.0
+ * Version:     0.1.0
  * Author:      Richard Tape
  * Author URI:  https://richardtape.com
  * Text Domain: content-visibility-date-and-time

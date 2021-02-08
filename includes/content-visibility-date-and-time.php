@@ -106,7 +106,7 @@ function rule_logic_date_time( $rule_value, $block_visibility, $block ) {
 /**
  * Determine whether the passed $date is between the $start date and the $end date.
  *
- * @param string $date The date() to test if it is between $start and $end.
+ * @param string $date The date() to test if it is between $start and $end. (i.e. this is "now").
  * @param string $start The start date() of the testing period.
  * @param string $end The end date() of the testing period.
  * @return bool true if $date is between $start and $end dates. False otherwise.
@@ -115,7 +115,32 @@ function date_is_between_start_and_end_dates( $date, $start, $end ) {
 
 	$date_format = get_date_format();
 
-	$date  = date( $date_format, strtotime( $date ) );
+	/*
+		$start or $end can be false. This means they haven't been set, which is fine.
+		i.e.
+		you may want to display a block from whenever the post is published UNTIL
+		a certain time. Which means you wouldn't set a start time.
+		OR
+		you may want to display a block only AFTER a given time, forever. Which means
+		you wouldn't set an end time.
+
+		if there is no start time, we have to test if the current time is less than the
+		end time.
+
+		if there is no end time, we have to test if the start time is before the current time.
+	*/
+
+	if ( false === $start ) {
+		$end = date( $date_format, strtotime( $end ) );
+		return (bool) ( $date < $end );
+	}
+
+	if ( false === $end ) {
+		$start = date( $date_format, strtotime( $start ) );
+		return (bool) ( $start < $date );
+	}
+
+	// We have both set, so test if the current time is between the start and end time.
 	$start = date( $date_format, strtotime( $start ) );
 	$end   = date( $date_format, strtotime( $end ) );
 
