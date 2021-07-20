@@ -18,7 +18,7 @@ Start showing a block at 6am on May 23rd 2021 with no end date. (i.e. it is hidd
 
 ## Content Visibility
 
-Works alongside the core [Content Visibility plugin](https://github.com/richardtape/content-visibility) and [User Role add-on](https://github.com/richardtape/content-visibility-user-role) meaning you can schedule blocks for dates and times and only shown them to those users signed in with a specific role.
+Works alongside the core [Content Visibility plugin](https://wordpress.org/plugins/content-visibility) and [User Role add-on](https://wordpress.org/plugins/content-visibility-user-role) meaning you can schedule blocks for dates and times and only shown them to those users signed in with a specific role.
 
 ## Who made this?
 

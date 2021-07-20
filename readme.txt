@@ -1,10 +1,10 @@
 === Content Visibility Date and Time ===
 Contributors: iamfriendly
 Donate link: https://girlswhocode.com/
-Tags: block, content, visibility, date, time, contentvisibility
+Tags: contentvisibility, block, content, visibility, date, time
 Requires at least: 5.0
-Tested up to: 5.7.0
-Stable tag: 0.1.1
+Tested up to: 5.8.0
+Stable tag: 0.1.2
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -33,6 +33,10 @@ Let me know: [https://github.com/richardtape/content-visibility-date-and-time/is
 1. Showing the content visibility date and time controls in the content editor sidebar
 
 == Changelog ==
+
+= 0.1.2 =
+* Added indicator to show when Date/Time rules are present for a block to make it easier to see when a block has rules.
+* WP 5.8.0 compatibility.
 
 = 0.1.1 =
 * Updated tags to make addons more finadable from the core plugin.
