@@ -48,7 +48,6 @@ function dateTimeAttributesDeprecation(settings) {
             && attributes.contentVisibilityRules
             && attributes.contentVisibilityRules.dateTime
             && attributes.contentVisibilityRules.dateTime.start
-            && attributes.contentVisibilityRules.dateTime.start
             && Object.getPrototypeOf(attributes.contentVisibilityRules.dateTime.start) === Object.prototype
             && Object.keys(attributes.contentVisibilityRules.dateTime.start).length === 0;
         }
