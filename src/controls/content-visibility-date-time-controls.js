@@ -22,7 +22,7 @@ export const ContentVisibilityDateTimeControls = ({ rules, setAttributes, attrib
                 ...rules,
                 dateTime: {
                     ...rules.dateTime,
-                    [startOrEnd]: {}
+                    [startOrEnd]: null
                 }
             },
         } );

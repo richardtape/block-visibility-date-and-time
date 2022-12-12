@@ -53,8 +53,8 @@ addFilter( 'contentVisibility.defaultContentVisibilityRules', 'content-visibilit
 function registerDateTimeContentVisibilityRule( defaultRules ) {
 
     defaultRules.dateTime = {
-        start: {},
-        end: {}
+        start: null,
+        end: null
     };
 
     return defaultRules;
