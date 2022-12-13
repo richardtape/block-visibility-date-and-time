@@ -11,7 +11,7 @@
  * Plugin Name: Content Visibility Date and Time
  * Plugin URI:  https://richardtape.com/content-visibility/
  * Description: [Content Visibility Add-On] Schedule showing or hiding specific content blocks.
- * Version:     0.1.2
+ * Version:     0.1.3
  * Author:      Richard Tape
  * Author URI:  https://richardtape.com
  * Text Domain: content-visibility-date-and-time
